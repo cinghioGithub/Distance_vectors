@@ -23,5 +23,3 @@ name = 'file.txt'
 
 read_file(name, st)
 
-print(st.getList())
-print(st.getPosition('c'))
