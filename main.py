@@ -41,4 +41,16 @@ read_file(name, st)
 g = GRAPH.GRAPH(st.getDimention())
 loadGraph(name, st, g)
 
+timePass = []
+for i in range(g.getVertexNum()):
+    timePass.append(0)
+
+timeEnd = []
+for i in range(g.getVertexNum()):
+    timeEnd.append(0)
+
+clock = int(0)
+
+g.DFS(0, timePass, timeEnd, clock)
+
 #print(g.getMatrix(), st.getDimention())
