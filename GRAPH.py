@@ -25,21 +25,15 @@ class GRAPH:
     def getVertexNum(self):
         return self.vertexNum
 
-    @staticmethod
-    def dfsRecursive(g, start, timePass, timeEnd, clock):
+    def BFS(self, start, timePass, timeEnd, clock):
         clock += 1
-        time[start] = clock
+        timePass[start] = clock
 
-        print(start + "\n")
+        print(start,end="\n")
 
-        for i in range(g.vertexNum):
-            if(g.getMatrix()[start][i] != 0 and timePass[i] != 0):
-                dfsRecursive(g, g.getMatrix()[start][i], timePass, timeEnd)
+        for i in range(self.vertexNum):
+            if(self.getMatrix()[start][i] != 0 and timePass[i] == 0):
+                self.BFS(i, timePass, timeEnd, clock)
                 
         timeEnd[start] = clock
-        
-    dfsRecursive = staticmethod(dfsRecursive)
-
-    def DFS(self, start, timePass, timeEnd, clock):
-        dfsRecursive(self, start, timePass, timeEnd, clock)
             

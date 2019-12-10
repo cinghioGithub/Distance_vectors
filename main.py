@@ -51,6 +51,6 @@ for i in range(g.getVertexNum()):
 
 clock = int(0)
 
-g.DFS(0, timePass, timeEnd, clock)
+g.BFS(0, timePass, timeEnd, clock)
 
 #print(g.getMatrix(), st.getDimention())
