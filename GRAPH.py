@@ -1,6 +1,7 @@
 #! /usr/bin/python3.7m
 
 import ST
+import sys
 
 class GRAPH:
 
@@ -36,4 +37,24 @@ class GRAPH:
                 self.BFS(i, timePass, timeEnd, clock)
                 
         timeEnd[start] = clock
-            
+
+    def distanceVector(self, start, destintion):
+        if (start == destintion):
+            return 0
+
+        mat = self.getMatrix()
+        num = self.getVertexNum()
+        minDist = sys.maxsize
+        dist = 1
+
+        for i in range(num):
+            if(mat[start][i] != 0):
+                dist = 1
+                dist += self.distanceVector(i, destintion)
+                if(dist < minDist):
+                    minDist = dist
+        
+        if(minDist != sys.maxsize):
+            return minDist
+        else:
+            return dist

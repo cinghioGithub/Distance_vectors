@@ -51,6 +51,8 @@ for i in range(g.getVertexNum()):
 
 clock = int(0)
 
-g.BFS(0, timePass, timeEnd, clock)
+print(g.distanceVector(0, 3))
+
+#g.BFS(0, timePass, timeEnd, clock)
 
 #print(g.getMatrix(), st.getDimention())
