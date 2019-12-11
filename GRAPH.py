@@ -38,7 +38,9 @@ class GRAPH:
                 
         timeEnd[start] = clock
 
-    def distanceVector(self, start, destintion):
+    def distanceVector(self, start, destintion, vet):
+        vet[start] = 1
+
         if (start == destintion):
             return 0
 
@@ -48,12 +50,13 @@ class GRAPH:
         dist = 1
 
         for i in range(num):
-            if(mat[start][i] != 0):
+            if(mat[start][i] != 0 and vet[i] == 0):
                 dist = 1
-                dist += self.distanceVector(i, destintion)
+                dist += self.distanceVector(i, destintion, vet)
                 if(dist < minDist):
                     minDist = dist
         
+        vet[start] = 0
         if(minDist != sys.maxsize):
             return minDist
         else:

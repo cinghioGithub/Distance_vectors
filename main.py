@@ -51,7 +51,9 @@ for i in range(g.getVertexNum()):
 
 clock = int(0)
 
-print(g.distanceVector(0, 3))
+vet = [0] * g.getVertexNum()
+
+print(g.distanceVector(0, 3, vet))
 
 #g.BFS(0, timePass, timeEnd, clock)
 
