@@ -46,18 +46,21 @@ class GRAPH:
 
         mat = self.getMatrix()
         num = self.getVertexNum()
-        minDist = sys.maxsize
-        dist = 1
+        MaxDist = sys.maxsize
+        dist = 0
 
         for i in range(num):
             if(mat[start][i] != 0 and vet[i] == 0):
-                dist = 1
-                dist += self.distanceVector(i, destintion, vet)
-                if(dist < minDist):
+                dist = self.distanceVector(i, destintion, vet)
+
+                #if(dist == 1+sys.maxsize):
+                #    return sys.maxsize
+
+                if(dist < MaxDist):
                     minDist = dist
         
         vet[start] = 0
-        if(minDist != sys.maxsize):
-            return minDist
-        else:
-            return dist
+        #if(minDist != sys.maxsize):
+        return dist
+        #else:
+        #    return dist
